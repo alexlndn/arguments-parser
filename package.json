@@ -1,8 +1,8 @@
 {
   "name": "arguments-parser",
-  "version": "1.0.0-rev3",
+  "version": "1.0.0-rev4",
   "description": "A node arguments parser",
-  "main": "index.js",
+  "main": "arguments-parser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
