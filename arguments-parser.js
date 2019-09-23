@@ -39,9 +39,11 @@ function argumentsParser() {
         for(let map of mapping){
             let key
             if(typeof(map) === 'object'){
+                // TODO: hacer funcionar el multiple mapeo de flags
+                const baseKey = map[0]
                 for(let key of map){
                     let keyValue = args.filter( arg => arg[0] === key)[0]
-                    if(keyValue && keyValue[0].length > 0)
+                    if(keyValue && keyValue[0].length > 0 && !result[baseKey])
                         result[key] = keyValue[1]
                 }
             }else if(typeof(map) === 'string'){
