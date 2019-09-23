@@ -1,11 +1,14 @@
 {
   "name": "arguments-parser",
-  "version": "1.0.0-rev5",
+  "version": "1.0.1",
   "description": "A node arguments parser",
   "main": "arguments-parser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Alexis Aguirre <alex08lta@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "keywords": [
+    "node", "argv", "arguments", "cli", "parser"
+  ]
 }
