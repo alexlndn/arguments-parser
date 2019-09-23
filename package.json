@@ -1,6 +1,6 @@
 {
   "name": "arguments-parser",
-  "version": "1.0.0-rev4",
+  "version": "1.0.0-rev5",
   "description": "A node arguments parser",
   "main": "arguments-parser.js",
   "scripts": {

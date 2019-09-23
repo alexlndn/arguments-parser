@@ -1,16 +1,11 @@
-const { readFile } = require('fs')
+const { readFileSync } = require('fs')
 
-async function readMapping(){
+function readMapping(){
     try {
-        let prom = await new Promise( (resolve, reject) => {
-            readFile(__dirname + '/../../parserConfig/config.json', { flag: 'r', encoding: 'utf8' }, (err, data) => {
-                if(err) reject(err)
-                resolve(data)
-            })
-        })
-        return prom ? JSON.parse(prom) : null
+        const data = readFileSync(__dirname + '/../../config/arguments-parser.json', { flag: 'r', encoding: 'utf8' })
+        return data ? JSON.parse(data) : null
     }catch(err){
-        console.log('arguments-parser not configured. Please create config.json inside parserConfig in project root folder.')
+        console.log('arguments-parser not configured. Please create arguments-parser.json inside config in project root folder.')
         return null
     }
 }
@@ -36,9 +31,9 @@ const processArgs = () => {
     return processed
 }
 
-async function argumentsParser() {
+function argumentsParser() {
     const args = processArgs()
-    const mapping = await readMapping()
+    const mapping = readMapping()
     let result = {}
     if(mapping){
         for(let map of mapping){
@@ -57,7 +52,7 @@ async function argumentsParser() {
             }
         }
     }
-    console.log(result)
+    return result
 }
 
 module.exports = argumentsParser
