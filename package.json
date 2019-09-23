@@ -1,0 +1,11 @@
+{
+  "name": "arguments-parser",
+  "version": "1.0.0",
+  "description": "A node arguments parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexis Aguirre <alex08lta@gmail.com>",
+  "license": "ISC"
+}
