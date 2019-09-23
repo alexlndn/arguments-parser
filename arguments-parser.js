@@ -3,7 +3,7 @@ const { readFile } = require('fs')
 async function readMapping(){
     try {
         let prom = await new Promise( (resolve, reject) => {
-            readFile(__dirname + '/../parserConfig/config.json', { flag: 'r', encoding: 'utf8' }, (err, data) => {
+            readFile(__dirname + '/../../parserConfig/config.json', { flag: 'r', encoding: 'utf8' }, (err, data) => {
                 if(err) reject(err)
                 resolve(data)
             })
