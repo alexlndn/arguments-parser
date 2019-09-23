@@ -10,7 +10,7 @@ async function readMapping(){
         })
         return prom ? JSON.parse(prom) : null
     }catch(err){
-        console.log('argParser not configured. Please create config.json inside parserConfig in project root folder.')
+        console.log('arguments-parser not configured. Please create config.json inside parserConfig in project root folder.')
         return null
     }
 }
@@ -36,7 +36,7 @@ const processArgs = () => {
     return processed
 }
 
-async function argumentParser() {
+async function argumentsParser() {
     const args = processArgs()
     const mapping = await readMapping()
     let result = {}
@@ -56,12 +56,8 @@ async function argumentParser() {
                     result[key] = keyValue[1]
             }
         }
-    }else{
-        arguments.forEach( (val, index) => {
-            console.log(`${index}: ${val}`)
-        })
     }
     console.log(result)
 }
 
-module.exports = argumentParser
+module.exports = argumentsParser
