@@ -1,3 +1,4 @@
+[![npm version](https://badge.fury.io/js/arguments-parser.svg)](https://badge.fury.io/js/arguments-parser)
 # arguments-parser
 
 A simple and configurable node arguments parser.
@@ -8,6 +9,8 @@ const args = require('arguments-parser')()
 console.log(args) // output: { '-p': 2300 }
 ```
 > running: node index.js -p 2300
+
+Number and booleans are parsed.
 
 ## Configuration
 
@@ -24,30 +27,21 @@ console.log(args) // output: { '-p': 2300 }
 Note that the third config element is an array of strings, it can be used to assign two or more flags to same configuration.
 This configuration for *arguments-parser* will produce this json when we call node with:
 
-```js
-node index.js --skipgit --port 4200 -p 3200 --styles=scss
-```
-
-### Result object
+> node index.js --skipgit --port 4200 -p 3200 --styles=scss
 ```json
-    {
-        "--skipgit": true,
-        "--styles": "scss",
-        "--port": 4200
-    }
+{
+    "--skipgit": true,
+    "--styles": "scss",
+    "--port": 4200
+}
 ```
-
-```js
-node index.js --skipgit --p 3200 --port 4200 --styles=scss
-```
-
-### Result object
+> node index.js --skipgit --p 3200 --port 4200 --styles=scss
 ```json
-    {
-        "--skipgit": true,
-        "--styles": "scss",
-        "--port": 4200
-    }
+{
+    "--skipgit": true,
+    "--styles": "scss",
+    "--port": 4200
+}
 ```
 
 >   As you can see, the first element of the array (for multiple flags to same configuration) is the key of the result object, and has more height than other flags (for same configuration, in this case "-p" vs "--port" is sended in de node command, the result will be builded with "--port" value)
