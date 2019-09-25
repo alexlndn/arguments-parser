@@ -1,11 +1,91 @@
 const { readFileSync } = require('fs')
 
+/**
+ * HELPER: CONSOLE COLORS
+ * @author alexlndn <alex08lta@gmail.com>
+ * 
+ */
+class ConsoleColors {
+    static get reset() {
+        return "\x1b[0m";
+    }
+    static get bright() {
+        return "\x1b[1m";
+    }
+    static get dim() {
+        return "\x1b[2m";
+    }
+    static get underscore() {
+        return "\x1b[4m";
+    }
+    static get blink() {
+        return "\x1b[5m";
+    }
+    static get reverse() {
+        return "\x1b[7m";
+    }
+    static get hidden() {
+        return "\x1b[8m";
+    }
+    static get fgBlack() {
+        return "\x1b[30m";
+    }
+    static get fgRed() {
+        return "\x1b[31m";
+    }
+    static get fgGreen() {
+        return "\x1b[32m";
+    }
+    static get fgYellow() {
+        return "\x1b[33m";
+    }
+    static get fgBlue() {
+        return "\x1b[34m";
+    }
+    static get fgMagenta() {
+        return "\x1b[35m";
+    }
+    static get fgCyan() {
+        return "\x1b[36m";
+    }
+    static get fgWhite() {
+        return "\x1b[37m";
+    }
+    static get bgBlack() {
+        return "\x1b[40m";
+    }
+    static get bgRed() {
+        return "\x1b[41m";
+    }
+    static get bgGreen() {
+        return "\x1b[42m";
+    }
+    static get bgYellow() {
+        return "\x1b[43m";
+    }
+    static get bgBlue() {
+        return "\x1b[44m";
+    }
+    static get bgMagenta() {
+        return "\x1b[45m";
+    }
+    static get bgCyan() {
+        return "\x1b[46m";
+    }
+    static get bgWhite() {
+        return "\x1b[47m";
+    }
+}
+
 function readMapping(){
     try {
         const data = readFileSync(__dirname + '/../../config/arguments-parser.json', { flag: 'r', encoding: 'utf8' })
         return data ? JSON.parse(data) : null
     }catch(err){
-        console.log('arguments-parser not configured. Please create arguments-parser.json inside config folder in project root folder.')
+        console.log('------------------------------------------------------------------------------------')
+        console.log(`| ${ConsoleColors.fgCyan}Info:${ConsoleColors.reset} ${ConsoleColors.fgYellow}arguments-parser${ConsoleColors.reset} not configured.                                           |`)
+        console.log(`| Please create arguments-parser.json inside config folder in project root folder. |${ConsoleColors.reset}`)
+        console.log('------------------------------------------------------------------------------------')
         return null
     }
 }
@@ -52,7 +132,6 @@ function parseFinal(preProcessedJson){
 
 function argumentsParser() {
     const args = processArgs()
-    console.log(args)
     const mapping = readMapping()
     let result = {}
     if(mapping){
@@ -78,6 +157,10 @@ function argumentsParser() {
                     result[key] = keyValue[1]
             }
         }
+    }else{
+        args.forEach( arg => {
+            result[arg[0]] = arg[1]
+        })
     }
     return parseFinal(result)
 }

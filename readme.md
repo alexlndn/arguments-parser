@@ -1,6 +1,13 @@
 # arguments-parser
 
-A simple and configurable node arguments parser
+A simple and configurable node arguments parser.
+
+## Usage
+```js
+const args = require('arguments-parser')()
+console.log(args) // output: { '-p': 2300 }
+```
+> running: node index.js -p 2300
 
 ## Configuration
 
@@ -49,3 +56,6 @@ node index.js --skipgit --p 3200 --port 4200 --styles=scss
 
 - In the previous examples the --style flag value has an equal before the value itself, you can define your values with '=' or with a whitespace.
 - If no value has passed into a parameter, by default equals true
+
+## Remove no config warning
+If you want to use arguments-parser without config, to remove the warning message create the configuration file with no content.
