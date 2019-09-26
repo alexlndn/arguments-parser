@@ -1,0 +1,2 @@
+- [ ] Support config for return an array of only parameters.
+- [ ] Support multiple values for each flag.
