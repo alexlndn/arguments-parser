@@ -4,7 +4,7 @@ A simple and configurable node arguments parser.
 [![npm version](https://badge.fury.io/js/arguments-parser.svg)](https://badge.fury.io/js/arguments-parser)
 ---
 
-** WARNING v2.0.0 INTRODUCING DISRUPTING CHANGES **
+**WARNING v2.0.0 INTRODUCING DISRUPTING CHANGES**
 
 ## Usage
 ```js
@@ -15,7 +15,7 @@ console.log(args) // output: { 'p': 2300 }
 
 Number and booleans are parsed.
 
-** Since v2.0.0 the output object has no keys middle dashs **
+**Since v2.0.0 the output object has no keys middle dashs**
 
 ## Configuration
 
@@ -32,8 +32,8 @@ const args = require('arguments-parser')({
     onlyParamsArray: true // returns an array of received params : default false
 })
 ```
-** If explicit mode is set to true and no configuration file exists in config folder, a warning message will appear into console. **
-** If onlyParamsArray is set to true, explicit and keepAsArray will be ignored **
+**If explicit mode is set to true and no configuration file exists in config folder, a warning message will appear into console.**
+**If onlyParamsArray is set to true, explicit and keepAsArray will be ignored**
 
 ## Example: _arguments-parser.json_
 
@@ -67,7 +67,7 @@ This configuration for *arguments-parser* will produce this json when we call no
 }
 ```
 
-** Before v2.0.0 the properties of the object has the exact name of the properties configuration **
+**Before v2.0.0 the properties of the object has the exact name of the properties configuration**
 
 >   As you can see, the first element of the array (for multiple flags to same configuration) is the key of the result object, and has more height than other flags (for same configuration, in this case "-p" vs "--port" is sended in de node command, the result will be builded with "port" value)
 
