@@ -1,6 +1,6 @@
 {
   "name": "arguments-parser",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "A node arguments parser",
   "main": "arguments-parser.js",
   "scripts": {
@@ -13,6 +13,13 @@
   "author": "Alexis Aguirre <alex08lta@gmail.com>",
   "license": "ISC",
   "keywords": [
-    "node", "argv", "arguments", "cli", "parser"
-  ]
+    "node",
+    "argv",
+    "arguments",
+    "cli",
+    "parser"
+  ],
+  "dependencies": {
+    "node-coolors": "^1.0.4"
+  }
 }

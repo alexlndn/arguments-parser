@@ -1,0 +1,3 @@
+- v2.0.0
+  - Support configuration to parse single values or leave it as array of values
+  - Support to only return an array of parameters

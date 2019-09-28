@@ -1,2 +1,3 @@
-- [ ] Support config for return an array of only parameters.
-- [ ] Support multiple values for each flag.
+- v2.0.0
+  - [x] Support config for return an array of only parameters.
+  - [x] Support multiple values for each flag.
