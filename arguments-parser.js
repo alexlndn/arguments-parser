@@ -43,7 +43,7 @@ const getValue = (str) => {
 }
 
 const processArgs = (config) => {
-    const arguments = process.argv.slice(2)
+    const arguments = process.argv.slice(config.offset ? config.offset : 2)
     if(config.onlyParamsArray){
         return arguments
     }

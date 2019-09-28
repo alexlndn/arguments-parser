@@ -1,3 +1,3 @@
-- v2.0.0
-  - [x] Support config for return an array of only parameters.
-  - [x] Support multiple values for each flag.
+- [x] Support config for return an array of only parameters.
+- [x] Support multiple values for each flag.
+- [ ] Support offset config for remove default node params [Motivated by electron apps]
