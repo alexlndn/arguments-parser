@@ -1,8 +1,10 @@
 # arguments-parser
-A simple and configurable node arguments parser.
+
+[![NPM](https://nodei.co/npm/arguments-parser.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/arguments-parser/)
 ---
 [![npm version](https://badge.fury.io/js/arguments-parser.svg)](https://badge.fury.io/js/arguments-parser)
 ---
+A simple and configurable node arguments parser.
 
 **WARNING v2.0.0 INTRODUCING DISRUPTING CHANGES**
 
