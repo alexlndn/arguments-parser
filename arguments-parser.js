@@ -3,7 +3,7 @@ const coolors = require('node-coolors')
 
 function readMapping(){
     try {
-        const data = readFileSync(__dirname + '/config/arguments-parser.json', { flag: 'r', encoding: 'utf8' })
+        const data = readFileSync(__dirname + './../../config/arguments-parser.json', { flag: 'r', encoding: 'utf8' })
         return data ? JSON.parse(data) : null
     }catch(err){
         console.log(`${coolors.fgCyan(coolors.bright('Warning: '))}${coolors.fgYellow('arguments-parser')} not configured.`)
@@ -99,7 +99,7 @@ function parseValue(value){
                 value[index] = true
                 break
             case 'false':
-                value[index] = false 
+                value[index] = false
         }
     })
     return value
