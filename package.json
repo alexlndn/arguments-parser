@@ -11,10 +11,6 @@
         "build": "rimraf ./dist && rollup --config rollup.config.js",
         "postbuild": "cp ./src/main.d.ts ./dist/cjs/ && cp ./src/main.d.ts ./dist/esm/"
     },
-    "typings": "./main.d.ts",
-    "typescript": {
-        "definition": "./main.d.ts"
-    },
     "exports": {
         ".": {
             "require": "./dist/cjs/main.js",
@@ -38,7 +34,8 @@
         "eslint": "8.46.0",
         "prettier": "3.0.1",
         "rimraf": "5.0.1",
-        "rollup": "3.28.0"
+        "rollup": "3.28.0",
+        "tsc": "2.0.4"
     },
     "dependencies": {
         "chalk": "4.1.2"
