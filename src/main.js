@@ -49,7 +49,6 @@ const processArgs = (config) => {
             if (utils.isCompact(actualArg)) {
                 const val = utils.getValue(actualArg);
                 actualArg = utils.getKey(actualArg);
-                console.log({ val, actualArg });
                 processed[actualArg] = [];
                 processed[actualArg].push(val);
             } else {
