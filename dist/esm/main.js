@@ -8,10 +8,10 @@ function writeLog(str) {
 }
 
 function isKey (str) {
-    if (!str) {
+    if (!typeof str === 'undefined' || str === null) {
         writeLog(
             chalk.yellowBright(
-                'No se ha proporcionado la cadena para verificar si es clave o no.',
+                'Invalid value for param "str"',
             ),
         );
     }
@@ -23,10 +23,10 @@ function isCompact (str) {
 }
 
 function getKey (str) {
-    if (!str) {
+    if (!typeof str === 'undefined' || str === null) {
         writeLog(
             chalk.yellowBright(
-                'No se ha proporcionado la cadena para obtener la clave.',
+                'Invalid value for param "str"',
             ),
         );
         return;
@@ -38,10 +38,10 @@ function getKey (str) {
 }
 
 function getValue(str) {
-    if (!str) {
+    if (typeof str === 'undefined' || str === null) {
         writeLog(
             chalk.yellowBright(
-                'No se ha proporcionado la cadena para obtener el valor.',
+                'Invalid value for param "str"',
             ),
         );
         return;
