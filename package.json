@@ -14,7 +14,8 @@
     "exports": {
         ".": {
             "require": "./dist/cjs/main.js",
-            "import": "./dist/esm/main.mjs"
+            "import": "./dist/esm/main.mjs",
+            "types": "./src/main.d.ts"
         }
     },
     "repository": {
