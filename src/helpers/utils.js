@@ -17,7 +17,7 @@ function isCompact (str) {
 }
 
 function getKey (str) {
-    if (!typeof str === 'undefined' || str === null) {
+    if (typeof str === 'undefined' || str === null) {
         writeLog(
             chalk.yellowBright(
                 'Invalid value for param "str"',
@@ -27,8 +27,8 @@ function getKey (str) {
     }
     const index = str.indexOf('=');
     return index > -1
-        ? str.slice(0, index).slice(str.lastIndexOf('-') + 1, str.length)
-        : str.slice(str.lastIndexOf('-') + 1, str.length);
+        ? str.slice(0, index).replace(/^-+/g, '')
+        : str.replace(/^-+/g, '');
 }
 
 function getValue(str) {

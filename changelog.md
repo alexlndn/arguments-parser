@@ -1,3 +1,5 @@
+-   v3.2.0
+    -   Fix: negative values in params now are supported (--offset=-1)
 -   v3.0.2
     -   Enabling esm and cjs modules
 -   v2.0.1

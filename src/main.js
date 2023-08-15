@@ -43,13 +43,13 @@ const processArgs = (config) => {
     let actualArg;
 
     while (args[0] && args[0].length) {
-
         if (utils.isKey(args[0])) {
             actualArg = args.shift();
 
             if (utils.isCompact(actualArg)) {
                 const val = utils.getValue(actualArg);
                 actualArg = utils.getKey(actualArg);
+                console.log({ val, actualArg });
                 processed[actualArg] = [];
                 processed[actualArg].push(val);
             } else {
@@ -98,25 +98,28 @@ function argumentsParser(config = {}) {
     if (mapping) {
         for (const map of mapping) {
             let key;
-            if (typeof map === 'object') {
+            if (Array.isArray(map)) {
                 const baseKey = utils.getKey(map[0]);
 
                 for (const intKey of map) {
                     key = utils.getKey(intKey);
                     const keyValue = args[key];
-                    if (keyValue) {
+                    if (typeof keyValue !== 'undefined') {
                         result[baseKey] = keyValue;
                     }
                 }
                 // establecer el base
                 const keyValue = args[baseKey];
-                if (keyValue) {
+                if (typeof keyValue !== 'undefined') {
                     result[baseKey] = keyValue;
                 }
             } else if (typeof map === 'string') {
                 key = utils.getKey(map);
                 const keyValue = args[key];
-                if (keyValue) result[key] = keyValue;
+
+                if (typeof keyValue !== 'undefined') {
+                    result[key] = keyValue;
+                }
             }
         }
     } else {
