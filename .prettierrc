@@ -1,0 +1,12 @@
+{
+    "singleQuote": true,
+    "trailingComma": "all",
+    "tabWidth": 4,
+    "endOfLine": "lf",
+    "overrides": [
+        {
+            "files": [".prettierrc", ".lintstagedrc.json"],
+            "options": { "parser": "json" }
+        }
+    ]
+}

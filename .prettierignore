@@ -1,0 +1,23 @@
+# misc
+.DS_Store
+.vscode
+.idea
+.env
+.env.*
+
+#custom
+xunit.xml
+.nyc_output
+coverage
+node_modules/
+env.json
+newrelic_agent.log
+package-lock.json
+.eslintrc.*
+k8s/
+
+dist/
+.husky/
+.prettierignore
+.*ignore
+Dockerfile
