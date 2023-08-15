@@ -8,9 +8,13 @@
         "lint:fix": "eslint . --fix",
         "lint": "eslint .",
         "prettier": "prettier --write .",
-        "build": "rimraf ./dist && rollup --config rollup.config.js"
+        "build": "rimraf ./dist && rollup --config rollup.config.js",
+        "postbuild": "cp ./src/main.d.ts ./dist/cjs/ && cp ./src/main.d.ts ./dist/esm/"
     },
-    "types": "./main.d.ts",
+    "typings": "./main.d.ts",
+    "typescript": {
+        "definition": "./main.d.ts"
+    },
     "exports": {
         ".": {
             "require": "./dist/cjs/main.js",

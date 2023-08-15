@@ -197,3 +197,4 @@ function argumentsParser(config = {}) {
 }
 
 module.exports = argumentsParser;
+//# sourceMappingURL=main.js.map

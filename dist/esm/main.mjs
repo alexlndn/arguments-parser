@@ -195,3 +195,4 @@ function argumentsParser(config = {}) {
 }
 
 export { argumentsParser as default };
+//# sourceMappingURL=main.mjs.map
